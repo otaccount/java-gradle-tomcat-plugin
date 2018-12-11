@@ -1,0 +1,32 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    
+    dependencies {
+        classpath 'com.bmuschko:gradle-tomcat-plugin:2.5'
+    }
+}
+
+apply plugin: 'war'
+apply plugin: 'com.bmuschko.tomcat'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    def tomcatVersion = '7.0.76'
+    tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",
+           "org.apache.tomcat.embed:tomcat-embed-logging-juli:${tomcatVersion}",
+           "org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}"
+}
+
+dependencies {
+     // https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api
+	providedCompile 'javax.servlet:javax.servlet-api:3.1.0'
+}
+
+tomcat{
+    httpPort = 18080
+}
