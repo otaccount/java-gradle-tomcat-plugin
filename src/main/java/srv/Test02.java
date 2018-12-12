@@ -17,8 +17,10 @@ public class Test02 extends HttpServlet {
 
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         PrintWriter pr = res.getWriter();
-        pr.println("サンプル");
+        pr.println("line1");
+        pr.println("line2");
+        pr.println("line3");
     }
 }

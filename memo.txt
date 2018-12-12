@@ -2,3 +2,8 @@
 https://qiita.com/toastkidjp/items/7a93897210982bd7cfe0
 
 https://qiita.com/rch850/items/fddd59596b3a33428a1e
+
+サーブレットの自動コンパイル
+classの生成先をsrc/main/webapp/WEB-INF/classes
+sourceSets.main.output.classesDir = file('webapp/WEB-INF/classes')
+
