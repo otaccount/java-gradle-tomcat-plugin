@@ -7,3 +7,7 @@ https://qiita.com/rch850/items/fddd59596b3a33428a1e
 classの生成先をsrc/main/webapp/WEB-INF/classes
 sourceSets.main.output.classesDir = file('webapp/WEB-INF/classes')
 
+
+tomcat7 build.gradleの設定で可能
+それ以外 build\classes タスクの実行で可能
+

@@ -2,3 +2,8 @@ build
 bin
 .idea
 classes
+
+.project
+.gradle
+.settings
+.classpath

@@ -8,6 +8,7 @@ buildscript {
     }
 }
 
+apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'war'
 apply plugin: 'com.bmuschko.tomcat'
@@ -16,19 +17,23 @@ repositories {
     jcenter()
 }
 
-sourceSets.main.output.classesDir = file('webapp/WEB-INF/classes')
-
-eclipse {
-    classpath {
-        defaultOutputDir = file('src/main/webapp/WEB-INF/classes')
-    }
-}
+//sourceSets.main.output.classesDir = file('webapp/WEB-INF/classes')
+//eclipse {
+//    classpath {
+//        defaultOutputDir = file('src/main/webapp/WEB-INF/classes')
+//    }
+//}
 
 dependencies {
-    def tomcatVersion = '7.0.76'
+    def tomcatVersion = '8.5.16'
     tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",
-           "org.apache.tomcat.embed:tomcat-embed-logging-juli:${tomcatVersion}",
+           "org.apache.tomcat.embed:tomcat-embed-logging-juli:8.5.2",
            "org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}"
+}
+
+tomcat {
+    httpProtocol = 'org.apache.coyote.http11.Http11Nio2Protocol'
+    ajpProtocol  = 'org.apache.coyote.ajp.AjpNio2Protocol'
 }
 
 dependencies {
